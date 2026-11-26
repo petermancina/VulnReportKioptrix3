@@ -1,10 +1,10 @@
 <h1>Vulnerability Assessment Report</h1>
 
-Target System: Hostname Kioptrix_3, IPv4 Address 192.168.77.102
+<b>Target System:</b> Hostname Kioptrix_3, IPv4 Address 192.168.77.102
 
-Date of Assessment: November 11, 2026
+<b>Date of Assessment:</b> November 11, 2026
 
-Assessed By: Peter Mancina
+<b>Assessed By:</b> Peter Mancina
 
 
 <h2>1. Executive Summary</h2>
@@ -30,24 +30,23 @@ Assessed By: Peter Mancina
 
 <h2>3. Target System Specifications Identified</h2>
 
-Operating System: Linux Ubuntu 2.6.X (2.6.9-2.6.33)
+<b>Operating System:</b> Linux Ubuntu 2.6.X (2.6.9-2.6.33)
 
-Open Ports, Service, Service Version
+<b>Open Ports, Service, Service Version:</b>
 
 <pre><b>22/tcp, ssh, OpenSSH 4.7p1 Debian 8ubuntu1.2 (protocol 2.0)
 80/tcp, http, Apache httpd 2.2.8 - Ubuntu PHP 5.2.4-2ubuntu5.6 with Suhosin-Patch</b></pre>
 
 
-Nmap Port and Service Scan
-
-<p align="center">
+<h3>Nmap Port and Service Scan</h3>
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/SRW20An.png" height="60%" width="60%" alt="Nmap port and service scan image"/>
 </p>
 
-Nmap Operating System Enumeration Scan
 
-<p align="center">
+<h3>Nmap Operating System Enumeration Scan</h3>
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/4GOGIXL.png" height="60%" width="60%" alt="Nmap OS enumeration scan image"/>
 </p>
@@ -64,34 +63,35 @@ Nmap Operating System Enumeration Scan
 - **Evidence:** The Kioptrix 3 website uses LotusCMS, and the Metasploit module specifically targets the vulnerable page parameter and eval() behavior. See screen shots below.
 - **Remediation:** Remove or replace the vulnerable LotusCMS installation with maintained software. If replacement is not immediately possible, restrict access to the application until it can be remediated.
 
-Image: Login Lotus 3.0 Web Application
-<p align="center">
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/4b5I17K.png" height="30%" width="30%" alt="Lotus 3.0 webapp image"/>
 </p>
-
-Image: Searchsploit entries for scripts that exploit Lotus 3.0
-<p align="center">
+<b>Image above: Login Lotus 3.0 Web Application</b>
+</p>
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/3osXPAP.png" height="80%" width="80%" alt="Searchsploit Lotus 3.0 modules image"/>
 </p>
-
-Image: Metasploit payload details to exploit Lotus 3.0
-<p align="center">
+<b>Image above: Searchsploit entries for scripts that exploit Lotus 3.0</b>
+</p>
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/zeWTk48.png" height="80%" width="80%" alt="Metasploit Lotus 3.0 script payload image"/>
 </p>
-
-Image: Use of Lotus 3.0 url command injection exploit to set up a shell on Kioptrix3
+<b>Image above: Metasploit payload details to exploit Lotus 3.0</b>
+</p>
 <p align="center">
 <br/>
 <img src="https://i.imgur.com/zzT7tAf.png" height="100%" width="100%" alt="Exploitation of Lotus 3.0 image"/>
 </p>
-
-Image: Vulnerability Assessment machine remotely issuing the command whoami on the Kioptrix_3 webserver
+<b>Image above: Use of Lotus 3.0 url command injection exploit to set up a shell on Kioptrix3</b>
+</p>
 <p align="center">
 <br/>
 <img src="https://i.imgur.com/whVe9vT.png" height="100%" width="100%" alt="Exploitation of Lotus 3.0 image"/>
+</p>
+<b>Image above: Vulnerability Assessment machine remotely issuing the command whoami on the Kioptrix_3 webserver</b>
 </p>
 
 <h4>C2. PHP 5.2 End-of-Life Software</h4>
@@ -306,15 +306,16 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
 - **Evidence:** The blog post publicly mentions loneferret. See the website screenshot see image below
 - **Remediation:** Avoid publishing system account names where they are not needed. Use strong, unique passwords, rate-limit or otherwise protect login attempts, and avoid reusing passwords between services.
 
-Image: Webserver Blog page publicizing employee username <b>loneferret</b>
-<p align="center">
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/maPE9lo.png" height="60%" width="60%" alt="Webserver Blog page publicizing employee username"/>
 </p>
+<b>Image above: Webserver Blog page publicizing employee username loneferret</b>
 
-Nikto Scan Results Source Evidence
 
-<p align="center">
+<h3>Nikto Scan Results Source Evidence</h3>
+
+<p align="left">
 <br/>
 <img src="https://i.imgur.com/49PyeXh.png" height="80%" width="80%" alt="Nikto Scan Results"/>
 </p>
