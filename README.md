@@ -334,9 +334,6 @@ Nikto Scan Results Source Evidence
 
 Addressing the critical and high-severity findings detailed in this report will significantly mitigate the risk of compromise for Kioptrix_3. We recommend immediate scheduling of the remediation tasks provided in Section 4.
 
-#BREAKOUT BOXES
-<pre><b></b></pre>
-
 <!--
  ```diff
 - text in red
