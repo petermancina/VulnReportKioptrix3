@@ -326,10 +326,14 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
 
 <h2>5. Security Recommendations (General Hardening)</h2>
 
-- **1. Least Privilege:** Ensure users/services on this machine only have the permissions necessary for their function. Further protect user accounts by implementing Multi-factor Authentication (MFA) such as a smart-phone Authenticator application (Duo, Authy, Microsoft Authenticator, Google Authenticator) and a secure password manager application.  Remove internet-facing administrative login portals, and protect staff usernames by refraining from posting them publicly online. 
-- **2. Patch Management:** Implement an automated cadence for security updates for application software, operating system software, and firmware. Create a patch management approval process for emergency situations in which new vulnerabilities for critical systems can be patched quickly albeit with clear roll-back procedures and backup management protocols. 
-- **3. Monitoring:** Install Endpoint Detection and Response with User Behavior Analytics and a Host-based Intrusion Detection System on Kioptrix_3 to ensure that AI-supported monitoring prevents anomalous activity, changes to core system files, prevents malware execution, and alerts security staff of unauthorized intrusions. Additionally, ensure this host contains a SIEM forwarder client to send logs to a centralized SIEM to detect future unauthorized attempts.
-- **4. Training:** Train all employees on secure password creation, password manager and MFA usage, and policies for public positing of company and user information online
+<h3>1. Least Privilege</h3>
+Ensure users/services on this machine only have the permissions necessary for their function. Further protect user accounts by implementing Multi-factor Authentication (MFA) such as a smart-phone Authenticator application (Duo, Authy, Microsoft Authenticator, Google Authenticator) and a secure password manager application.  Remove internet-facing administrative login portals, and protect staff usernames by refraining from posting them publicly online. 
+<h3>2. Patch Management</h3>
+Implement an automated cadence for security updates for application software, operating system software, and firmware. Create a patch management approval process for emergency situations in which new vulnerabilities for critical systems can be patched quickly albeit with clear roll-back procedures and backup management protocols. 
+<h3>3. Monitoring</h3>
+Install Endpoint Detection and Response with User Behavior Analytics and a Host-based Intrusion Detection System on Kioptrix_3 to ensure that AI-supported monitoring prevents anomalous activity, changes to core system files, prevents malware execution, and alerts security staff of unauthorized intrusions. Additionally, ensure this host contains a SIEM forwarder client to send logs to a centralized SIEM to detect future unauthorized attempts.
+<h3>4. Training</h3>
+Train all employees on secure password creation, password manager and MFA usage, and policies for public positing of company and user information online
 
 <h2>6. Conclusion</h2>
 
