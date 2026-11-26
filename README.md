@@ -15,9 +15,16 @@ Assessed By: Peter Mancina
     • Overall Risk Rating:  Critical pending complete confirmation of exploitability
     • Recommendation for Further Assessment: This report is based primarily on system vulnerability scanning and requires future validation through a full penetration test.
 
+
 <h2>2. Risk Matrix</h2>
 
-#TABLE 1
+| Severity | Count | Potential Impact |
+| --- | ---: | --- |
+| **Critical** | 3 | Immediate risk to business continuity and data integrity. |
+| **High** | 2 | Could allow unauthorized access or lateral movement. |
+| **Medium** | 4 | Requires privileged access; potential for secondary exploitation. |
+| **Low** | 15 | Informational; suggests hardening improvements. |
+
 
 
 
@@ -104,6 +111,7 @@ Image: Vulnerability Assessment machine remotely issuing the command whoami on t
     • Remediation: Upgrade the operating system to a supported release and install its latest vendor-provided kernel updates, then reboot into the updated kernel.
 
 
+
 <h3>High-level Vulnerabilities</h3>
 
 <h4>H1. Outdated Apache HTTP Server (version 2.2.8)</h4>
@@ -124,6 +132,7 @@ Image: Vulnerability Assessment machine remotely issuing the command whoami on t
     • Remediation: Upgrade Apache HTTP Server to a currently supported version, as Apache 2.2.8 is outdated and unsupported. Until then, apply an Apache-approved mitigation to limit or reject excessive byte-range requests. 
 
 
+
 <h3>Medium Vulnerabilities Related to the Kioptrix.com Webserver</h3>
 
 <h4>M1. CVE-2011-0419: Apache mod_autoindex denial of service</h4>
@@ -141,6 +150,7 @@ Image: Vulnerability Assessment machine remotely issuing the command whoami on t
     • Business Impact: If the administrative interface is reachable and poorly protected, or administrative credentials to the database are stolen, an attacker may attempt to access or alter databases directly from the internet. The changelog and documentation pages alone may disclose software information but do not demonstrate database access. 
     • Evidence: Nikto results #001795 (/phpmyadmin/changelog.php) and #006672 (/phpmyadmin/Documentation.html). See the Nikto scan results evidence at the end of this section, results #001795 and 006672.
     • Remediation: Confirm whether the phpMyAdmin login and administrative functions are accessible from the internet. If the tool is not needed, remove it. Otherwise, restrict access to authorized users and trusted networks, and keep it updated. Remove public internet access to phpMyAdmin files.
+
 
 
 <h3>Medium Vulnerabilities Related to Kioptrix_3's SSH Software OpenSSH version 4.7p1</h3>
@@ -167,6 +177,8 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
 <br/>
 <img src="https://i.imgur.com/LtOfEjP.png" height="60%" width="60%" alt="Searchsploit scripts for exploiting OpenSSH 4.7p1"/>
 </p>
+
+
   
 <h3>Low and Informational Vulnerabilities Related to Kioptrix's Use of OpenSSH version 4.7p1</h3>
 
@@ -177,6 +189,8 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
     • Business Impact: This vulnerability could allow a remote attacker who can observe and interfere with SSH traffic to recover some of the information being sent in "plaintext" (not encoded or encrypted). This may expose parts of sensitive data exchanged during an SSH session and give the attacker remote access to internal systems and data. 
     • Evidence: This vulnerability could be exploited and pertains to the OpenSSH 4.7p1 version running on Kioptrix_3. See details at https://nvd.nist.gov/vuln/detail/cve-2008-5161
     • Remediation: Upgrade OpenSSH to a currently supported version. Until then, disable CBC-mode ciphers and use supported, secure cipher modes instead. 
+
+
 
 <h3>Low and Informational Vulnerabilities Related to the Kioptrix3.com Webserver</h3>
 
@@ -322,12 +336,6 @@ Addressing the critical and high-severity findings detailed in this report will 
 
 #BREAKOUT BOXES
 <pre><b></b></pre>
-
-#IMAGES
-<p align="center">
-<br/>
-<img src="" height="100%" width="100%" alt=""/>
-</p>
 
 <!--
  ```diff
