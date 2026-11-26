@@ -308,7 +308,7 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
 
 <p align="left">
 <br/>
-<img src="https://i.imgur.com/maPE9lo.png" height="60%" width="60%" alt="Webserver Blog page publicizing employee username"/>
+<img src="https://i.imgur.com/maPE9lo.png" height="70%" width="70%" alt="Webserver Blog page publicizing employee username"/>
 </p>
 <b>Image above: Webserver Blog page publicizing employee username loneferret</b>
 
@@ -322,7 +322,32 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
 
 <h2>4. Remediation Plan</h2>
 
-#TABLE 2
+| Vulnerability | Recommended Correction | Priority |
+| --- | --- | --- |
+| C1 | Remove or replace the vulnerable LotusCMS installation with maintained software. If replacement is not immediately possible, restrict access to the application until it can be remediated. | Immediate |
+| C2 | Upgrade PHP and test the website for compatibility. | Immediate |
+| C3 | Upgrade the operating system to a supported Linux release and install its latest vendor-provided kernel updates, then reboot into the updated kernel.| Immediate |
+| H1 | Confirm the installed Apache HTTP Server package and any vendor back-ported fixes on the machine. If confirmed, upgrade to a supported Apache release and test the website for compatibility. | Short-term |
+| H2 | Remediation consistent with H1 | Short-term |
+| M1 | Remediation consistent with H1. If upgrading the Apache server cannot be done in the short-term, disable mod_autoindex if the website does not require directory listings. | Short-term |
+| M2 | Confirm whether the webserver's phpMyAdmin login and administrative functions are accessible from the internet. If the tool is not needed, remove it. Otherwise, restrict access to authorized users and trusted networks, and keep it updated. Remove public internet access to phpMyAdmin files. | Short-term | 
+| M3 | Upgrade OpenSSH to a version that includes a fix for CVE-2018-15473. Also use strong passwords and limit repeated login attempts to reduce the risk of password-guessing attacks. | Short-term |
+| M4 | Upgrade OpenSSH to a currently supported version. Until then, ensure privilege separation is enabled and restrict SSH access to trusted users. | Short-term |
+| L1 | Upgrade OpenSSH to a currently supported version. Until then, disable CBC-mode ciphers and use supported, secure cipher modes instead. | As soon as possible |
+| L2 | Configure the application to set HttpOnly on session cookies; also use Secure when the site is served over HTTPS and review for cross-site scripting vulnerabilities. | As soon as possible |
+| L3 | Disable directory listings on the web server and ensure that only intended, public files are stored in web-accessible directories. | As soon as possible |
+| L4 | Disable the HTTP TRACE method if the site does not require it, then retest | When possible |
+| L5 | Configure the web server’s ETag behavior to omit inode information, then retest. | When possible |
+| L6 | Configure the web server to send X-Content-Type-Options: nosniff and ensure responses use the correct content type. | When possible |
+| L7 | If the site is intended to support HTTPS, configure TLS and send HSTS on HTTPS responses. | When possible |
+| L8 | Confirm what each query string request actually returns. Disable PHP Easter Egg responses or turn off expose_php if the application does not require it. | When possible |
+| L9 | Configure a permissions policy that allows only the browser features it needs. | When possible |
+| L10 | Configure a suitable policy, such as strict-origin-when-cross-origin, or a stricter policy if appropriate for the site. | When possible |
+| L11 | If the site is maintained, develop and test a policy that permits only the content the site needs; an overly restrictive policy can break site functionality. | When possible |
+| L12 | Treat this as an observation, not a confirmed vulnerability, unless further testing shows that an unsupported method can access or change protected data. | When possible |
+| L13 | Remove the README file or restrict access to unnecessary default content if it is not required. | When possible |
+| L14 | Check the response headers: if X-Frame-Options is set to DENY or SAMEORIGIN, it provides framing protection. Consider adding an appropriate CSP frame-ancestors directive as well. | When possible |
+| L15 | Informational: Avoid publishing system account names where they are not needed. Use strong, unique passwords, rate-limit or otherwise protect login attempts, and avoid reusing passwords between services. | When possible |
 
 <h2>5. Security Recommendations (General Hardening)</h2>
 
