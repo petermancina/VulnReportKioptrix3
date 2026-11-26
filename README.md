@@ -349,7 +349,7 @@ Image: Searchsploit scripts for exploiting OpenSSH 4.7p1
 | L14 | Check the response headers: if X-Frame-Options is set to DENY or SAMEORIGIN, it provides framing protection. Consider adding an appropriate CSP frame-ancestors directive as well. | When possible |
 | L15 | Informational: Avoid publishing system account names where they are not needed. Use strong, unique passwords, rate-limit or otherwise protect login attempts, and avoid reusing passwords between services. | When possible |
 
-<h2>5. Security Recommendations (General Hardening)</h2>
+<h2>5. Security Recommendations: General Hardening</h2>
 
 <h3>1. Least Privilege</h3>
 Ensure users/services on this machine only have the permissions necessary for their function. Further protect user accounts by implementing Multi-factor Authentication (MFA) such as a smart-phone Authenticator application (Duo, Authy, Microsoft Authenticator, Google Authenticator) and a secure password manager application.  Remove internet-facing administrative login portals, and protect staff usernames by refraining from posting them publicly online. 
