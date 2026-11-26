@@ -9,11 +9,11 @@ Assessed By: Peter Mancina
 
 <h2>1. Executive Summary</h2>
 
-    • Objective: To identify and evaluate security weaknesses on the Kioptrix_3 system that could lead to unauthorized access, data loss, or service interruption.
-    • High-Level Findings: I identified 24 vulnerabilities, including 3 Critical and 2 High-severity risks.
-    • Business Impact: These vulnerabilities represent a direct risk to Data Confidentiality, Intellectual Property, System Availability, Brand Trust. If exploited, an attacker could potentially gain full administrative control and exfiltrate customer records from the company database.
-    • Overall Risk Rating:  Critical pending complete confirmation of exploitability
-    • Recommendation for Further Assessment: This report is based primarily on system vulnerability scanning and requires future validation through a full penetration test.
+- **Objective:** To identify and evaluate security weaknesses on the Kioptrix_3 system that could lead to unauthorized access, data loss, or service interruption.
+- **High-Level Findings:** I identified 24 vulnerabilities, including 3 Critical and 2 High-severity risks.
+- **Business Impact:** These vulnerabilities represent a direct risk to data confidentiality, intellectual property, system availability, and brand trust. If exploited, an attacker could potentially gain full administrative control and exfiltrate customer records from the company database.
+- **Overall Risk Rating:** Critical, pending complete confirmation of exploitability.
+- **Recommendation for Further Assessment:** This report is based primarily on system vulnerability scanning and requires future validation through a full penetration test.
 
 
 <h2>2. Risk Matrix</h2>
